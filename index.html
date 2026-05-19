@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Memory Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="light">
+
+  <header id="top_header">
+    <div id="logo_area">
+      <span class="pokeball-icon">&#9898;</span>
+      <h1 id="game_title">Pokémon Memory</h1>
+    </div>
+
+    <button id="theme_btn" title="Toggle theme">Dark Mode</button>
+  </header>
+
+  <section id="controls">
+    <div id="difficulty_group">
+      <span class="ctrl-label">Difficulty:</span>
+      <label class="diff-btn">
+        <input type="radio" name="difficulty" value="easy" checked /> Easy
+      </label>
+      <label class="diff-btn">
+        <input type="radio" name="difficulty" value="medium" /> Medium
+      </label>
+      <label class="diff-btn">
+        <input type="radio" name="difficulty" value="hard" /> Hard
+      </label>
+    </div>
+
+    <div id="action_group">
+      <button id="start_btn" class="game-btn primary">Start</button>
+      <button id="reset_btn" class="game-btn secondary" disabled>Reset</button>
+      <button id="peek_btn" class="game-btn power" disabled>Peek</button>
+    </div>
+  </section>
+
+  <section id="status_bar">
+    <div class="stat-box">
+      <span class="stat-label">Clicks</span>
+      <span class="stat-value" id="stat_clicks">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Matched</span>
+      <span class="stat-value" id="stat_matched">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Remaining</span>
+      <span class="stat-value" id="stat_remaining">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Total Pairs</span>
+      <span class="stat-value" id="stat_total">0</span>
+    </div>
+    <div class="stat-box timer-box">
+      <span class="stat-label">Time</span>
+      <span class="stat-value" id="stat_timer">--</span>
+    </div>
+  </section>
+
+
+  <div id="loading_msg" style="display:none;">
+    <div class="spinner"></div>
+    <p>Getting Pokemon . . .</p>
+  </div>
+
+
+  <main id="game_grid"></main>
+
+
+  <div id="message_overlay" style="display:none;">
+    <div id="message_box">
+      <div id="message_icon"></div>
+      <h2 id="message_title"></h2>
+      <p id="message_body"></p>
+      <button id="msg_play_again" class="game-btn primary">Play Again</button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+
+</html>
